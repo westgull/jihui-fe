@@ -3,35 +3,33 @@
     <div class="login-container">
       <div class="logo">
         <a href="#/">
-          <img src="images/logo.png">
         </a>
       </div>
       <div class="login-box-warp">
         <div class="login-box">
-          <h2>密码登录</h2>
+          <h2>登录</h2>
           <span class="input-group">
-            <input type="text" v-model="form.account">
+            <input type="text" v-model="form.account" placeholder="请输入用户名">
             <span class="input-icon">
               <i class="iconfont icon-people"></i>
             </span>
           </span>
           <span class="input-group">
-            <input type="password" v-model="form.password" onkeydown='if(event.keyCode==13){this.onSubmit}'>
+            <input type="password" placeholder="请输入密码" v-model="form.password" onkeydown='if(event.keyCode==13){this.onSubmit}'>
             <span class="input-icon">
               <i class="iconfont icon-lock"></i>
             </span>
           </span>
 
           <span class="input-group">
-            <input type="text" id="input">
+            <input type="text" id="input" placeholder="请输入验证码">
             <input type="button" id="code" @click="createCode()" />
           </span>
 
           <button class="login-submit" id="login-btn" type="submit" @click="onSubmit" style="width:100%">登录</button>
 
           <p class="login-box-link">
-            <a href='#/register'>免费注册</a>
-            <a href="#/forgetPassword">忘记密码</a>
+            <a href='#/register'>注册</a>
           </p>
         </div>
       </div>
@@ -43,9 +41,6 @@
 <script>
   import Vue from 'vue';
   import $ from 'jQuery';
-  import {
-    login
-  } from 'api/user.js';
 
   export default {
     name: 'login',
@@ -82,24 +77,10 @@
             this.createCode(); //刷新验证码  
             document.getElementById("input").value = ""; //清空文本框  
           } else { //输入正确时  
-            login(this.form).then(res => {
-              if (typeof (res.message) == 'string') {
-                this.$notify.error({
-                  title: res.message,
-                  duration: 1500
-                });
-                this.createCode(); //刷新验证码  
-                document.getElementById("input").value = ""; //清空文本框  
-              } else {
-                $.cookie('token', res.uuid, {
-                  expires: .2
-                });
-                $.cookie('userName', res.message.name, {
-                  expires: .2
-                });
-                this.$router.push('/');
-              }
+            $.cookie('userName', this.form.account, {
+              expires: .2
             });
+            this.$router.push('/');
           }
         }
       },
@@ -132,7 +113,4 @@
 
 </script>
 
-<style lang="scss">
 
-
-</style>

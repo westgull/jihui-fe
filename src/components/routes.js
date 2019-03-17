@@ -4,16 +4,16 @@ import VueRouter from 'vue-router';
 import Home from 'components/home.vue';
 import Product from 'components/product.vue';
 import Rift from 'components/product/rift.vue';
+import food from 'components/product/food.vue';
+import fashion from 'components/product/fashion.vue';
 import Demo from 'components/product/demo.vue';
 import Login from 'components/login.vue';
-import Support from 'components/support.vue';
 import Register from 'components/register.vue';
 import About from 'components/about.vue';
 import Container from 'components/container.vue';
 import Ucenter from 'components/user/ucenter.vue';
 import Cart from 'components/cart.vue';
 import Buy from 'components/buy.vue';
-import Order from 'components/order.vue';
 Vue.use(VueRouter);
 
 const routes = [{
@@ -30,8 +30,12 @@ const routes = [{
         component: Rift
       },
       {
-        path: '/support',
-        component: Support
+        path: '/food',
+        component: food
+      },
+      {
+        path: '/fashion',
+        component: fashion
       },
       {
         path: '/about',
@@ -53,10 +57,6 @@ const routes = [{
         path: '/buy',
         component: Buy
       },
-      {
-        path: '/order/:id',
-        component: Order
-      }
     ]
   },
   {

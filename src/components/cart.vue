@@ -8,7 +8,7 @@
         <el-table-column label="商品" min-width="300">
           <template slot-scope="scope">
             <div class="img-box">
-              <img :src="'images/products/' + scope.row.image">
+              <img :src="'images/' + scope.row.image">
             </div>
             <div class="title">
               <p class="name">{{scope.row.pName}}</p>
@@ -64,16 +64,25 @@
   import Vue from 'vue';
   import Init from 'components/default/init';
   import $ from 'jQuery';
-  import {
-    getCart,
-    deleteCart
-  } from 'api/user.js';
 
   export default {
     name: 'cart',
     data() {
       return {
-        cartData: null,
+        cartData: [
+          {
+            image:'food1.jpg',
+            pName:'三养超辣鸡肉味奶油拌面',
+            sPrice:'36.9',
+            num:'1'
+          },
+          {
+            image:'food4.jpg',
+            pName:'德运高钙全脂成人牛奶粉',
+            sPrice:'126.00',
+            num:'1'
+          }
+        ],
         multipleSelection: ''
       };
     },
@@ -107,19 +116,6 @@
           cancelButtonText: '取消',
           type: 'warning'
         }).then(() => {
-          deleteCart({
-            id: row.id
-          }).then(r => {
-            getCart({
-              user: $.cookie('userName')
-            }).then(res => {
-              res.data.forEach(item => {
-                item.switch = eval('(' + item.switch+')');
-              })
-              this.cartData = res.data;
-              console.log(this.cartData);
-            })
-          })
           this.$message({
             type: 'success',
             message: '删除成功!'
@@ -139,16 +135,6 @@
       }
     },
     created() {
-      getCart({
-        user: $.cookie('userName')
-      }).then(res => {
-        if (res.data.length >= 1) {
-          res.data.forEach(item => {
-            item.switch = eval('(' + item.switch+')');
-          })
-        }
-        this.cartData = res.data;
-      })
     },
     mounted() {
       Init();

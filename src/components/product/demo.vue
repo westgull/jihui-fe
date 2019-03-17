@@ -6,25 +6,25 @@
           <div class="bg">
             <div class="bg_left">
               <div class="show">
-                <img :src="'images/products/' + product.name + '/' + product.switch.image[0]">
+                <img :src="'images/' + product.image">
                 <div class="mask"></div>
               </div>
-              <div class="smallshow">
+              <!-- <div class="smallshow">
                 <p class="prev prevnone"></p>
                 <div class="middle_box">
                   <ul class="middle">
-                    <li v-for="val in product.switch.image">
-                      <img :src="'images/products/' + product.name + '/' + val" alt="">
+                    <li v-for="val in product.image">
+                      <img :src="'images/' + val" alt="">
                     </li>
                   </ul>
                 </div>
                 <p class="next"></p>
-              </div>
+              </div> -->
             </div>
             <div class="bg_right">
               <div class="bigshow">
                 <div class="bigitem">
-                  <img :src="'images/products/' + product.name + '/' + product.switch.image[0]">
+                  <img :src="'images/'+product.image">
                 </div>
               </div>
             </div>
@@ -36,12 +36,12 @@
             <span class="num">{{product.price}}元</span>
           </div>
 
-          <div class="form-group" v-for="(v,k,index) in product.switch" v-if="k!='image'">
+          <!-- <div class="form-group" v-for="(v,k,index) in product.switch" v-if="k!='image'">
             <p>{{k}}</p>
             <el-radio-group v-model="switchRadio[index]" size="medium" @change="changeSwitch(k,v)">
               <el-radio-button v-for="val in v" :key="val" :label="val"></el-radio-button>
             </el-radio-group>
-          </div>
+          </div> -->
 
           <div class="form-group">
             <p>数量</p>
@@ -65,17 +65,7 @@
             <el-tabs v-model="activeName" @tab-click="handleClick">
               <el-tab-pane class="details" label="详情" name="first">
                 <div class="img-box">
-                  <img v-for="val in product.detail" :src="'images/products/' + product.name + '/' + val">
-                </div>
-              </el-tab-pane>
-              <el-tab-pane v-if="product.function.length>0" class="function" label="功能" name="second">
-                <div class="img-box">
-                  <img v-for="val in product.function" :src="'images/products/' + product.name + '/' + val">
-                </div>
-              </el-tab-pane>
-              <el-tab-pane label="包装" name="third" v-if="product.packing.length>0" class="packing">
-                <div class="img-box">
-                  <img v-for="val in product.packing" :src="'images/products/' + product.name + '/' + val">
+                  <img v-for="val in product.detail" :src="'images/detail/' + val">
                 </div>
               </el-tab-pane>
             </el-tabs>
@@ -85,9 +75,9 @@
             <a href="#/product/公子小白">
               <el-card>
                 <div class="img-container">
-                  <img src="images/公子小白.jpg">
+                  <img src="images/products/九号平衡车/balanceCar_thumbnail_1.jpg">
                 </div>
-                <p class="pro-name">公子小白</p>
+                <p class="pro-name">九号平衡车</p>
                 <p class="desc">智能情感机器人</p>
                 <p class="price">￥1880</p>
               </el-card>
@@ -116,15 +106,179 @@
         activeIndex: '',
         switchRadio: ['', '', '', '', '', ''],
         num1: 1,
+        carNum: 1,
         activeName: 'first',
         product: {
-          detail: [],
+          type:'noodle',
+          name:'三养超辣鸡肉味奶油拌面',
+          price:'36.90',
+          stock:2,
           switch: {
-            image: ''
+            image: 'food1.jpg'
           },
+          image: 'food1.jpg',
+          detail:['detail2.jpg'],
           function: [],
           packing: []
         },
+        productArr:[
+          {
+            type:'noodle',
+            name:'三养超辣鸡肉味奶油拌面',
+            price:'36.90',
+            stock:2,
+            switch: {
+              image: 'food1.jpg'
+            },
+            image: 'food1.jpg',
+            detail:['detail2.jpg'],
+            function: [],
+            packing: []
+          },
+          {
+            type:'neck',
+            name:'小黑天鹅吊坠项链',
+            price:'389.00',
+            stock:10,
+            switch: {
+              image: 'good4.jpg'
+            },
+            image: 'good4.jpg',
+            detail:[''],
+            function: [],
+            packing: []
+          },
+          {
+            type:'nike',
+            name:'CORTEZ 白红元年阿甘鞋',
+            price:'529.00',
+            stock:6,
+            switch: {
+              image: 'good1.jpg'
+            },
+            image: 'good1.jpg',
+            detail:['good1.jpg'],
+            function: [],
+            packing: []
+          },
+          {
+            type:'bag',
+            name:'MICHAEL KORS单肩包',
+            price:'1299.00',
+            stock:2,
+            switch: {
+              image: 'good2.jpg'
+            },
+            image: 'good2.jpg',
+            detail:['good2.jpg'],
+            function: [],
+            packing: []
+          },
+          {
+            type:'watch',
+            name:'FILA/斐乐手表',
+            price:'419.00',
+            stock:2,
+            switch: {
+              image: 'good3.jpg'
+            },
+            image: 'good3.jpg',
+            detail:['good3.jpg'],
+            function: [],
+            packing: []
+          },
+          {
+            type:'cookie',
+            name:'网易严选苏打饼干',
+            price:'12.80',
+            stock:20,
+            switch: {
+              image: 'food2.jpg'
+            },
+            image: 'food2.jpg',
+            detail:['food2.jpg'],
+            function: [],
+            packing: []
+          },
+          {
+            type:'oatmeal',
+            name:'卡乐比水果麦片',
+            price:'169.00',
+            stock:2,
+            switch: {
+              image: 'food3.jpg'
+            },
+            image: 'food3.jpg',
+            detail:['food3.jpg'],
+            function: [],
+            packing: []
+          },
+          {
+            type:'milk',
+            name:'德运高钙全脂成人牛奶粉',
+            price:'126.00',
+            stock:10,
+            switch: {
+              image: 'food4.jpg'
+            },
+            image: 'food4.jpg',
+            detail:['food4.jpg'],
+            function: [],
+            packing: []
+          },
+          {
+            type:'vr',
+            name:'Oculus Rift VR眼镜',
+            price:'1880',
+            stock:4,
+            switch: {
+              image: 'Oculus Rift.png'
+            },
+            image: 'Oculus Rift.png',
+            detail:['Oculus Rift.png'],
+            function: [],
+            packing: []
+          },
+          {
+            type:'car',
+            name:'九号平衡车',
+            price:'1880',
+            stock:2,
+            switch: {
+              image: 'products/九号平衡车/balanceCar_thumbnail_1.jpg'
+            },
+            image: 'products/九号平衡车/balanceCar_thumbnail_1.jpg',
+            detail:['products/九号平衡车/balanceCar_thumbnail_1.jpg'],
+            function: [],
+            packing: []
+          },
+          {
+            type:'Apple',
+            name:'Apple Watch Sport',
+            price:'2280',
+            stock:2,
+            switch: {
+              image: 'Apple Watch Sport.jpg'
+            },
+            image: 'Apple Watch Sport.jpg',
+            detail:['Apple Watch Sport.jpg'],
+            function: [],
+            packing: []
+          },
+          {
+            type:'gear',
+            name:'Gear VR',
+            price:'1280',
+            stock:2,
+            switch: {
+              image: 'Gear VR.jpg'
+            },
+            image: 'Gear VR.jpg',
+            detail:['Gear VR.jpg'],
+            function: [],
+            packing: []
+          }
+        ],
         name: this.$route.params.name
       };
     },
@@ -133,28 +287,6 @@
     },
     methods: {
       initial() {
-        getProduct({
-          name: this.$route.params.name
-        }).then(res => {
-          res.data[0].detail = eval('(' + res.data[0].detail + ')')
-          res.data[0].function = eval('(' + res.data[0].function+')');
-          res.data[0].packing = eval('(' + res.data[0].packing + ')');
-          res.data[0].switch = eval('(' + res.data[0].switch+')');
-          Object.keys(res.data[0].switch).map((k, v) => {
-            if (k != 'image') {
-              this.switchRadio[v] = res.data[0].switch[k][0];
-            }
-          })
-          // console.log(product)
-          this.product = res.data[0];
-          console.log(this.product);
-          console.log(this.switchRadio);
-        })
-      },
-      radiochange(val) {
-        console.log(val);
-        // console.log(k);
-        console.log(this.switchRadio);
       },
       getNowFormatDate() {
         var date = new Date();
@@ -197,20 +329,17 @@
           let swi = this.switchRadio.filter(v => {
             return v != ''
           })
-          addCart({
-            user: $.cookie('userName'),
-            product: this.product.id,
-            num: this.num1,
-            time: this.getNowFormatDate(),
-            switch: JSON.stringify(swi)
-          })
-          location.reload();
+          if (this.carNum > this.product.stock) {
+            this.$notify.error({
+              title: "最大数量为库存量",
+              duration: 1000
+            });
+            return
+          }
+          this.$emit('getCarNum',this.carNum++)
         } else {
           this.$router.push('/login');
         }
-      },
-      changeSwitch(val, v) {
-        console.log(this.switchRadio);
       },
       order() {
         if ($.cookie('userName')) {
@@ -238,6 +367,11 @@
     created() {
       // console.log(this.name);
       this.initial();
+      this.productArr.forEach((item)=>{
+        if (item.type == this.$route.params.name) {
+          this.product = item
+        }
+      })
     },
     mounted() {
       // Show();

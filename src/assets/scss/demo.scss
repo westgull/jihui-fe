@@ -9,7 +9,7 @@
     }
     .bg {
       width: 920px;
-      height: 540px;
+      height: 430px;
       margin: 0 auto;
       padding: 20px; // border: 1px solid #E8E8E8;
       overflow: hidden;
@@ -219,13 +219,14 @@
         img{
           // width: 100%;
           max-width: 100%;
-          margin: 20px auto;
         }
       }
     }
   }
 
   .recommend{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
     margin-left: 20px;
     height: 400px;
     width:calc(25% - 20px);

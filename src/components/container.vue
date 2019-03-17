@@ -10,11 +10,12 @@
         @select="handleSelect">
         <el-menu-item index="/">首页</el-menu-item>
         <el-submenu index="/product">
-          <template slot="title">产品</template>
-          <el-menu-item index="/rift">Oculus Rift</el-menu-item>
+          <template slot="title">好物</template>
+          <el-menu-item index="/fashion">时尚</el-menu-item>
+          <el-menu-item index="/food">美食</el-menu-item>
+          <el-menu-item index="/rift">科技</el-menu-item>
           <el-menu-item :index="'/product/'+p.name" :key="p.name" v-for="p in List" v-if="p.name!='Oculus Rift'">{{p.name}}</el-menu-item>
         </el-submenu>
-        <el-menu-item index="/support">支持</el-menu-item>
         <el-menu-item index="/about">关于</el-menu-item>
         <el-submenu v-if="islogin" index="10" style="width:90px">
           <template slot="title">
@@ -35,16 +36,9 @@
         </el-menu-item>
       </el-menu>
     </el-header>
-    <el-main style="padding:0">
-      <router-view></router-view>
+    <el-main style="padding:0" >
+      <router-view @getCarNum="getCarNum"></router-view>
     </el-main>
-    <el-footer>
-      <div>
-        <p>Copyright &copy; 上海集慧科技有限公司 沪ICP备170311111号
-          <span class="version">Version : v0.1.24</span>
-        </p>
-      </div>
-    </el-footer>
   </el-container>
 
 </template>
@@ -65,7 +59,7 @@
       return {
         activeIndex: this.$route.path,
         islogin: false,
-        carNum: 0,
+        carNum: 2,
         List: []
       };
     },
@@ -73,11 +67,6 @@
       "$route": function () {
         if ($.cookie('userName')) {
           this.islogin = true;
-          getCartNum({
-            user: $.cookie('userName')
-          }).then(res => {
-            this.carNum = res.num;
-          })
         } else {
           this.islogin = false;
         }
@@ -86,6 +75,9 @@
     methods: {
       handleSelect(key, keyPath) {
 
+      },
+      getCarNum (val) {
+        this.carNum = val
       },
       loginout() {
         $.removeCookie('userName');
