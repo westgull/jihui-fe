@@ -52,6 +52,54 @@
               </el-card>
             </a>
           </div>
+          <div class="col-xl-3 col-xs-12 col-md-4">
+            <a href="#/product/neck2">
+              <el-card>
+                <div class="img-container">
+                  <img src="images/good5.jpg">
+                </div>
+                <p class="pro-name">SWAROVSKI</p>
+                <p class="desc">恶魔之眼项链</p>
+                <p class="price">¥559.00 </p>
+              </el-card>
+            </a>
+          </div>
+          <div class="col-xl-3 col-xs-12 col-md-4">
+            <a href="#/product/nike2">
+              <el-card>
+                <div class="img-container">
+                  <img src="images/good6.jpg">
+                </div>
+                <p class="pro-name">NIKE 耐克</p>
+                <p class="desc">男鞋Air Huarache</p>
+                <p class="price">¥649.00 </p>
+              </el-card>
+            </a>
+          </div>
+          <div class="col-xl-3 col-xs-12 col-md-4">
+            <a href="#/product/neck3">
+              <el-card>
+                <div class="img-container">
+                  <img src="images/good7.jpg">
+                </div>
+                <p class="pro-name">LiberAedon励柏艾顿</p>
+                <p class="desc">可爱红色小狗项链</p>
+                <p class="price">¥88.00 </p>
+              </el-card>
+            </a>
+          </div>
+          <div class="col-xl-3 col-xs-12 col-md-4">
+            <a href="#/product/earing">
+              <el-card>
+                <div class="img-container">
+                  <img src="images/good8.jpg">
+                </div>
+                <p class="pro-name">SWAROVSKI</p>
+                <p class="desc">MICKEY&MINNIE耳钉</p>
+                <p class="price">¥379.00 </p>
+              </el-card>
+            </a>
+          </div>
         </div>
       </div>
     </div>

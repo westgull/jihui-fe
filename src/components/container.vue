@@ -2,9 +2,9 @@
   <el-container>
     <el-header class="header">
       <div class="logo_container">
-        <a href="#/">
+        <router-link to="/">
           <img class="logo" src="images/logo.png">
-        </a>
+        </router-link>
       </div>
       <el-menu :default-active="activeIndex" :router='true' class="el-menu-demo" mode="horizontal" active-text-color="#4e97d9"
         @select="handleSelect">
@@ -37,7 +37,7 @@
       </el-menu>
     </el-header>
     <el-main style="padding:0" >
-      <router-view @getCarNum="getCarNum"></router-view>
+      <router-view></router-view>
     </el-main>
   </el-container>
 
@@ -46,9 +46,6 @@
 <script>
   import Vue from 'vue';
   import $ from 'jQuery';
-  import {
-    getCartNum
-  } from 'api/user.js';
   import {
     productList
   } from 'api/product.js';
@@ -59,12 +56,13 @@
       return {
         activeIndex: this.$route.path,
         islogin: false,
-        carNum: 2,
+        carNum: 4,
         List: []
       };
     },
     watch: {
       "$route": function () {
+        this.activeIndex = this.$route.path
         if ($.cookie('userName')) {
           this.islogin = true;
         } else {
@@ -75,9 +73,6 @@
     methods: {
       handleSelect(key, keyPath) {
 
-      },
-      getCarNum (val) {
-        this.carNum = val
       },
       loginout() {
         $.removeCookie('userName');
@@ -93,11 +88,6 @@
       });
       if ($.cookie('userName')) {
         this.islogin = true;
-        getCartNum({
-          user: $.cookie('userName')
-        }).then(res => {
-          this.carNum = res.num;
-        })
       } else {
         this.islogin = false;
       }

@@ -158,7 +158,7 @@
         activeName: 'first',
         coupon: 'first',
         iscollapse: false,
-        carNum: 0,
+        carNum: 4,
         ispaying: false,
         orderInfo: [
           {

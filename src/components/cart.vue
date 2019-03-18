@@ -81,7 +81,19 @@
             pName:'德运高钙全脂成人牛奶粉',
             sPrice:'126.00',
             num:'1'
-          }
+          },
+          {
+            image:'good5.jpg',
+            pName:'SWAROVSKI 恶魔之眼项链',
+            sPrice:'559.00',
+            num:'2'
+          },
+          {
+            image:'food6.jpg',
+            pName:'CEBU 宿雾 芒果干',
+            sPrice:'145.00',
+            num:'1'
+          },
         ],
         multipleSelection: ''
       };
@@ -108,7 +120,7 @@
         this.multipleSelection = val;
       },
       handleChange(value) {
-        console.log(this.multipleSelection);
+        // console.log(this.multipleSelection);
       },
       handleDelete(index, row) {
         this.$confirm('确定将此商品移出购物车吗?', '提示', {
@@ -116,6 +128,7 @@
           cancelButtonText: '取消',
           type: 'warning'
         }).then(() => {
+          this.cartData.splice(index,1)
           this.$message({
             type: 'success',
             message: '删除成功!'

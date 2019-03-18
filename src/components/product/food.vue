@@ -52,6 +52,54 @@
               </el-card>
             </a>
           </div>
+          <div class="col-xl-3 col-xs-12 col-md-4">
+            <a href="#/product/ff">
+              <el-card>
+                <div class="img-container">
+                  <img src="images/food5.jpg">
+                </div>
+                <p class="pro-name">Calbee 卡乐比</p>
+                <p class="desc">薯条三兄弟</p>
+                <p class="price">¥13.50 </p>
+              </el-card>
+            </a>
+          </div>
+          <div class="col-xl-3 col-xs-12 col-md-4">
+            <a href="#/product/mango">
+              <el-card>
+                <div class="img-container">
+                  <img src="images/food6.jpg">
+                </div>
+                <p class="pro-name">CEBU 宿雾</p>
+                <p class="desc">芒果干</p>
+                <p class="price">¥145.00</p>
+              </el-card>
+            </a>
+          </div>
+          <div class="col-xl-3 col-xs-12 col-md-4">
+            <a href="#/product/chip">
+              <el-card>
+                <div class="img-container">
+                  <img src="images/food7.jpg">
+                </div>
+                <p class="pro-name">JIUR 九日</p>
+                <p class="desc">蜂蜜黄油薯片</p>
+                <p class="price">¥16.90 </p>
+              </el-card>
+            </a>
+          </div>
+          <div class="col-xl-3 col-xs-12 col-md-4">
+            <a href="#/product/cookie2">
+              <el-card>
+                <div class="img-container">
+                  <img src="images/food8.jpg">
+                </div>
+                <p class="pro-name">ISHIYA 白色恋人</p>
+                <p class="desc">北海道白巧克力薄饼</p>
+                <p class="price">¥118.00 </p>
+              </el-card>
+            </a>
+          </div>
         </div>
       </div>
     </div>

@@ -93,6 +93,7 @@
 <script>
   import Vue from 'vue';
   import mag from 'components/default/show';
+  import {goods} from 'components/default/detail';
   import {
     getProduct,
     addCart,
@@ -106,7 +107,7 @@
         activeIndex: '',
         switchRadio: ['', '', '', '', '', ''],
         num1: 1,
-        carNum: 1,
+        carNum: 4,
         activeName: 'first',
         product: {
           type:'noodle',
@@ -121,164 +122,6 @@
           function: [],
           packing: []
         },
-        productArr:[
-          {
-            type:'noodle',
-            name:'三养超辣鸡肉味奶油拌面',
-            price:'36.90',
-            stock:2,
-            switch: {
-              image: 'food1.jpg'
-            },
-            image: 'food1.jpg',
-            detail:['detail2.jpg'],
-            function: [],
-            packing: []
-          },
-          {
-            type:'neck',
-            name:'小黑天鹅吊坠项链',
-            price:'389.00',
-            stock:10,
-            switch: {
-              image: 'good4.jpg'
-            },
-            image: 'good4.jpg',
-            detail:['detail3.jpg'],
-            function: [],
-            packing: []
-          },
-          {
-            type:'nike',
-            name:'CORTEZ 白红元年阿甘鞋',
-            price:'529.00',
-            stock:6,
-            switch: {
-              image: 'good1.jpg'
-            },
-            image: 'good1.jpg',
-            detail:['detail4.jpg'],
-            function: [],
-            packing: []
-          },
-          {
-            type:'bag',
-            name:'MICHAEL KORS单肩包',
-            price:'1299.00',
-            stock:2,
-            switch: {
-              image: 'good2.jpg'
-            },
-            image: 'good2.jpg',
-            detail:['detail6.jpg'],
-            function: [],
-            packing: []
-          },
-          {
-            type:'watch',
-            name:'FILA/斐乐手表',
-            price:'419.00',
-            stock:2,
-            switch: {
-              image: 'good3.jpg'
-            },
-            image: 'good3.jpg',
-            detail:['detail5.jpg'],
-            function: [],
-            packing: []
-          },
-          {
-            type:'cookie',
-            name:'网易严选苏打饼干',
-            price:'12.80',
-            stock:20,
-            switch: {
-              image: 'food2.jpg'
-            },
-            image: 'food2.jpg',
-            detail:['food2.jpg'],
-            function: [],
-            packing: []
-          },
-          {
-            type:'oatmeal',
-            name:'卡乐比水果麦片',
-            price:'169.00',
-            stock:2,
-            switch: {
-              image: 'food3.jpg'
-            },
-            image: 'food3.jpg',
-            detail:['detail7.jpg'],
-            function: [],
-            packing: []
-          },
-          {
-            type:'milk',
-            name:'德运高钙全脂成人牛奶粉',
-            price:'126.00',
-            stock:10,
-            switch: {
-              image: 'food4.jpg'
-            },
-            image: 'food4.jpg',
-            detail:['detail8.jpg'],
-            function: [],
-            packing: []
-          },
-          {
-            type:'vr',
-            name:'Oculus Rift VR眼镜',
-            price:'1880',
-            stock:4,
-            switch: {
-              image: 'Oculus Rift.png'
-            },
-            image: 'Oculus Rift.png',
-            detail:['detail9.jpg'],
-            function: [],
-            packing: []
-          },
-          {
-            type:'car',
-            name:'九号平衡车',
-            price:'1880',
-            stock:2,
-            switch: {
-              image: 'products/九号平衡车/balanceCar_thumbnail_1.jpg'
-            },
-            image: 'products/九号平衡车/balanceCar_thumbnail_1.jpg',
-            detail:['detail10.jpg'],
-            function: [],
-            packing: []
-          },
-          {
-            type:'Apple',
-            name:'Apple Watch Sport',
-            price:'2280',
-            stock:2,
-            switch: {
-              image: 'Apple Watch Sport.jpg'
-            },
-            image: 'Apple Watch Sport.jpg',
-            detail:['detail12.jpg'],
-            function: [],
-            packing: []
-          },
-          {
-            type:'gear',
-            name:'Gear VR',
-            price:'1280',
-            stock:2,
-            switch: {
-              image: 'Gear VR.jpg'
-            },
-            image: 'Gear VR.jpg',
-            detail:['detail12.jpg'],
-            function: [],
-            packing: []
-          }
-        ],
         name: this.$route.params.name
       };
     },
@@ -336,7 +179,6 @@
             });
             return
           }
-          this.$emit('getCarNum',this.carNum++)
         } else {
           this.$router.push('/login');
         }
@@ -367,7 +209,7 @@
     created() {
       // console.log(this.name);
       this.initial();
-      this.productArr.forEach((item)=>{
+      goods.forEach((item)=>{
         if (item.type == this.$route.params.name) {
           this.product = item
         }
@@ -384,7 +226,7 @@
     },
     watch: {
       '$route'() {
-        this.productArr.forEach((item)=>{
+        goods.forEach((item)=>{
           if (item.type == this.$route.params.name) {
             this.product = item
           }
