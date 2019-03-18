@@ -72,7 +72,7 @@
           </el-col>
           <el-col :md="6" class="recommend hidden-sm-and-down">
             <p style="font-size: 24px;text-align: center;">推荐</p>
-            <a href="#/product/公子小白">
+            <a href="#/product/car">
               <el-card>
                 <div class="img-container">
                   <img src="images/products/九号平衡车/balanceCar_thumbnail_1.jpg">
