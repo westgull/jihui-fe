@@ -19,7 +19,7 @@
         <el-menu-item index="/about">关于</el-menu-item>
         <el-submenu v-if="islogin" index="10" style="width:90px">
           <template slot="title">
-            <img src="images/carousel1.jpg" style="width:40px;height:40px;border-radius: 50px">
+            <img src="images/head.jpg" style="width:40px;height:40px;border-radius: 50px">
           </template>
           <el-menu-item index="/ucenter">个人中心</el-menu-item>
           <el-menu-item index="/re" @click="loginout">

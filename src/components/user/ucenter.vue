@@ -17,7 +17,7 @@
     <div class="u-body">
       <div class="index-1-1" v-if="active == '1-1'">
         <div class="head-card">
-          <img src="images/carousel1.jpg">
+          <img src="images/head.jpg">
           <p class="name">{{username}}</p>
         </div>
         <div class="row body-card">
