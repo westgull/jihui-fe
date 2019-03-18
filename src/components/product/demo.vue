@@ -144,7 +144,7 @@
               image: 'good4.jpg'
             },
             image: 'good4.jpg',
-            detail:[''],
+            detail:['detail3.jpg'],
             function: [],
             packing: []
           },
@@ -157,7 +157,7 @@
               image: 'good1.jpg'
             },
             image: 'good1.jpg',
-            detail:['good1.jpg'],
+            detail:['detail4.jpg'],
             function: [],
             packing: []
           },
@@ -170,7 +170,7 @@
               image: 'good2.jpg'
             },
             image: 'good2.jpg',
-            detail:['good2.jpg'],
+            detail:['detail6.jpg'],
             function: [],
             packing: []
           },
@@ -183,7 +183,7 @@
               image: 'good3.jpg'
             },
             image: 'good3.jpg',
-            detail:['good3.jpg'],
+            detail:['detail5.jpg'],
             function: [],
             packing: []
           },
@@ -209,7 +209,7 @@
               image: 'food3.jpg'
             },
             image: 'food3.jpg',
-            detail:['food3.jpg'],
+            detail:['detail7.jpg'],
             function: [],
             packing: []
           },
@@ -222,7 +222,7 @@
               image: 'food4.jpg'
             },
             image: 'food4.jpg',
-            detail:['food4.jpg'],
+            detail:['detail8.jpg'],
             function: [],
             packing: []
           },
@@ -235,7 +235,7 @@
               image: 'Oculus Rift.png'
             },
             image: 'Oculus Rift.png',
-            detail:['Oculus Rift.png'],
+            detail:['detail9.jpg'],
             function: [],
             packing: []
           },
@@ -248,7 +248,7 @@
               image: 'products/九号平衡车/balanceCar_thumbnail_1.jpg'
             },
             image: 'products/九号平衡车/balanceCar_thumbnail_1.jpg',
-            detail:['products/九号平衡车/balanceCar_thumbnail_1.jpg'],
+            detail:['detail10.jpg'],
             function: [],
             packing: []
           },
@@ -261,7 +261,7 @@
               image: 'Apple Watch Sport.jpg'
             },
             image: 'Apple Watch Sport.jpg',
-            detail:['Apple Watch Sport.jpg'],
+            detail:['detail12.jpg'],
             function: [],
             packing: []
           },
@@ -274,7 +274,7 @@
               image: 'Gear VR.jpg'
             },
             image: 'Gear VR.jpg',
-            detail:['Gear VR.jpg'],
+            detail:['detail12.jpg'],
             function: [],
             packing: []
           }
@@ -381,6 +381,15 @@
           obj.init();
         });
       }, 300);
+    },
+    watch: {
+      '$route'() {
+        this.productArr.forEach((item)=>{
+          if (item.type == this.$route.params.name) {
+            this.product = item
+          }
+        })
+      }
     }
   }
 

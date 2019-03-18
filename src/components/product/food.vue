@@ -5,7 +5,7 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-xl-3 col-xs-12 col-md-4">
-            <a href="#/noodle">
+            <a href="#/product/noodle">
               <el-card>
                 <div class="img-container">
                   <img src="images/food1.jpg">
