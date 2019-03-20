@@ -73,7 +73,7 @@ export const goods=[
         image: 'food2.jpg'
       },
       image: 'food2.jpg',
-      detail:['food2.jpg'],
+      detail:['detail21.jpg'],
       function: [],
       packing: []
     },
